@@ -10,7 +10,7 @@
   <div id="formdiv">
   <form action="" method="post">{% csrf_token %}
     {% if object %}
-    <h1>Edit Employee {{ object.first_name }} {{ object.last_name }}</h1>
+    <h1>Edit Employee {{ object.name_emp }} {{ object.driver_man }}</h1>
     {% else %}
     <h1>Create Employee</h1>
     {% endif %}

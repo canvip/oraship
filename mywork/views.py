@@ -9,8 +9,17 @@ def index(request):
     return HttpResponse(" You're at the mywork index.")
 
 def create(request):
-    return HttpResponse("""أختبار الغه العربيه
-        أحمد علاء""")
+    queryset = orashipping.objects.all()
+
+
+    context = {"title":'ahmed',
+    "objects_list":queryset,
+
+    }
+
+
+
+    return render(request,"employee_form.html",context)
 
 
 
