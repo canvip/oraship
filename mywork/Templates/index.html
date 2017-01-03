@@ -1,0 +1,26 @@
+<html>
+{{ user }}
+{{ form.v_orashipping.orashipping }}
+<head>
+  <link rel="stylesheet" type="text/css" href="\static\admin\css\python_hol.css">
+</head>
+
+<body>
+  {% if error_message %}
+    <p><strong>{{ error_message }}</strong></p>
+  {% endif %}
+  <div id="formdiv">
+  <form action="" method="post">{% csrf_token %}
+    {% if object %}
+    <h1>Edit name_emp {{ object.name_emp }} </h1>
+    {% else %}
+    <h1>Create name_emp</h1>
+    {% endif %}
+    <p>Use this form to manage your name_emp.</p>
+    <form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+  </form>
+  </div>    
+</body>
+</html>

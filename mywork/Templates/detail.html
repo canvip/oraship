@@ -1,0 +1,53 @@
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/static/admin/js/vendor/jquery/bootstrap.min.js"></script>
+        <link href="/static/admin/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/static/admin/css/bootstrap.css" rel="stylesheet" type="text/css">
+
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="\static\admin\css\python_hol.css">
+</head>
+<body>
+<div id="content">
+<a href="/create" class="addlink">Add New Employee</a>
+{% if objects_list %}
+<table id="employee_list_table" frame="hsides" rules="cols" style="border-width: 5px">
+<tr>
+<th>Email</th>
+<th>اسم المندوب</th>
+<th>رقم الفتوره</th>
+<th>	اسم السائق</th>
+<th>   تاريخ الفتوره  </th>
+<th>الاداره</th>
+<th>Objective %</th>
+<th>Action</th>
+</tr>
+{% for obj in objects_list %}
+<tr>
+<td><a href="/employees/update/{{ employee.employee_id }}/">{{ employee.email }}</a></td>
+<td>{{ obj.name_emp }}</td>
+<td>{{ obj.type_no }}</td>
+<td>{{ obj.driver_man }}</td>
+<td>{{ obj.datetime }}</td>
+<td>{{ obj.management }}</td>
+<td>{{ obj.objective }}</td>
+<td><a href="/employees/delete/{{ employee.employee_id }}/">Delete</a></td>
+</tr>
+{% endfor %}
+</table>
+{% else %}
+<p>No orashipping found.</p>
+{% endif %}
+</div>
+</body>
+</html>
+________________________
+{% for obj in objects_list %}
+<tr>{{ obj.type_no }} </td>
+ {{ obj.datetime}}</td></tr>
+
+
+{% endfor %}
