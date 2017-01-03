@@ -1,0 +1,12 @@
+defusedxml==0.4.1
+Django==1.10.1
+mysqlclient==1.3.9
+Pillow==3.4.2
+PyAMF==0.8.0
+pyfiglet==0.7.5
+reportlab==3.3.0
+
+
+
+#لاستخراج قاعده البينات  python manage.py inspectdb > models.py
+#المرجع https://docs.djangoproject.com/en/1.10/howto/legacy-databases/
