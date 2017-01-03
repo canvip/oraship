@@ -4,7 +4,7 @@
         <script type="text/javascript" src="/static/admin/js/vendor/jquery/bootstrap.min.js"></script>
         <link href="/static/admin/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/static/admin/css/bootstrap.css" rel="stylesheet" type="text/css">
-
+		<body background="static\admin\img/1.jpg">
 
 <html>
 <head>
@@ -12,11 +12,11 @@
 </head>
 <body>
 <div id="content">
-<a href="/create" class="addlink">Add New Employee</a>
+<a href="/create" class="addlink">Add New Ora </a>
 {% if objects_list %}
 <table id="employee_list_table" frame="hsides" rules="cols" style="border-width: 5px">
 <tr>
-<th>Email</th>
+<th>datetime</th>
 <th>اسم المندوب</th>
 <th>رقم الفتوره</th>
 <th>	اسم السائق</th>
@@ -27,14 +27,14 @@
 </tr>
 {% for obj in objects_list %}
 <tr>
-<td><a href="/employees/update/{{ employee.employee_id }}/">{{ employee.email }}</a></td>
+<td><a href="/datetime/update/{{ obj.datetime }}/"> {{ obj.datetime }} </a></td>
 <td>{{ obj.name_emp }}</td>
 <td>{{ obj.type_no }}</td>
 <td>{{ obj.driver_man }}</td>
 <td>{{ obj.datetime }}</td>
 <td>{{ obj.management }}</td>
 <td>{{ obj.objective }}</td>
-<td><a href="/employees/delete/{{ employee.employee_id }}/">Delete</a></td>
+<td><a href="/datetime/delete/{{ obj.type_no }}/">Delete</a></td>
 </tr>
 {% endfor %}
 </table>
@@ -44,10 +44,3 @@
 </div>
 </body>
 </html>
-________________________
-{% for obj in objects_list %}
-<tr>{{ obj.type_no }} </td>
- {{ obj.datetime}}</td></tr>
-
-
-{% endfor %}
