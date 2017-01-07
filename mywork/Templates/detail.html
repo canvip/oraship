@@ -27,20 +27,33 @@
 </tr>
 {% for obj in objects_list %}
 <tr>
-<td><a href="/datetime/update/{{ obj.datetime }}/"> {{ obj.datetime }} </a></td>
+<td><a href="/datetime/update/{{ obj.datetime }}/"> " {{ obj.datetime }} " </a></td>
 <td>{{ obj.name_emp }}</td>
 <td>{{ obj.type_no }}</td>
 <td>{{ obj.driver_man }}</td>
 <td>{{ obj.datetime }}</td>
 <td>{{ obj.management }}</td>
 <td>{{ obj.objective }}</td>
-<td><a href="/datetime/delete/{{ obj.type_no }}/">Delete</a></td>
+<td><a href="/datetime/delete/{{ obj.type_no }}/">Delete | "{{obj.type_no}}"</a></td>
 </tr>
 {% endfor %}
 </table>
 {% else %}
 <p>No orashipping found.</p>
 {% endif %}
+
+
+<div style="margin-top:11px;"/>
+{% if page_range %}
+<ul class="detail">
+{% for page in page_range %}
+<li><a href="/detail/?page={{page}}">{{page}}</a></li>
+{% endfor %}
+</ul>
+{% else %}
+<p>No more pages.</p>
+{% endif %}
+</div>
 </div>
 </body>
 </html>
