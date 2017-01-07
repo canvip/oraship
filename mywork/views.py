@@ -2,7 +2,7 @@
 from django.shortcuts import render , get_object_or_404
 from django.http import HttpResponse
 from mywork.models import orashipping
-from .form import v_orashipping
+from .forms  import v_orashipping  
 
 
 def index(request):
@@ -25,15 +25,13 @@ def create(request):
 
 
 def detail(request):
+
     queryset = orashipping.objects.all()
-
-
     context = {"title":'ahmed',
     "objects_list":queryset,
 
     }
-    
-						
+
     return render(request,"detail.html",context)
 
 
@@ -42,6 +40,7 @@ def detail(request):
 def list(request):
     #instance= orashipping.objects.get(id=5)
     #instance= get_object_or_404(orashipping,type_no="1sa")
+    form = v_orashipping()
     queryset = orashipping.objects.all()
 
 

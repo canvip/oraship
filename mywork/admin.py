@@ -1,15 +1,8 @@
 from django.contrib import admin
 
 # Register your models here.
-from form import   v_orashipping
-from .models import   orashipping , Employee, Job #, Person class orashipping
-
-
-#class PersonModelAdmin(admin.ModelAdmin):
-#	search_fields = ["first_name","last_name"]#
-
-#	class meta:
-#		model = Person
+from forms import   v_orashipping
+from .models import   orashipping
 
 
 class OrashippingModelAdmin(admin.ModelAdmin):
@@ -28,15 +21,10 @@ class OrashippingModelAdmin(admin.ModelAdmin):
 
 
 
-class EmployeeAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'email', 'phone_number', 'hire_date', 'salary')
-    list_filter = ['hire_date']
-    search_fields = ['last_name']
-    date_hierarchy = 'hire_date'
 
 admin.site.register(orashipping,OrashippingModelAdmin)
-admin.site.register(Employee,EmployeeAdmin)
-admin.site.register(Job)
+#admin.site.register(Employee,EmployeeAdmin)
+#admin.site.register(Job)
 
 
 
